@@ -66,3 +66,18 @@ Using pip_:
 .. _pip: http://www.pip-installer.org/en/latest/
 .. _here: http://azkabancli.readthedocs.org/
 .. _examples: https://github.com/mtth/azkaban/tree/master/examples
+
+Development
+------------
+
+Run tests:
+
+  nosetests
+
+To also run the integration tests against an Azkaban server, create `~/.azkabanrc` that includes at least:
+
+  [azkaban]
+  test.alias = local
+
+  [alias.local]
+  url = azkaban:azkaban@http://localhost:8081
