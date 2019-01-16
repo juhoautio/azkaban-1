@@ -89,11 +89,8 @@ class TestCreateDelete(_TestSession):
       with temppath() as path:
         project.build(path)
         self.session.upload_project(project, path)
-    except HTTPError:
+    except (AzkabanError, HTTPError):
       return False
-    # TODO is this needed or not?
-    except AzkabanError:
-        return False
     else:
       return True
 
